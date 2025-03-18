@@ -1,4 +1,4 @@
-import { BASE_URL, GUN_ACTION_TYPES } from "../constants";
+import { BASE_URL, GUN_ACTION_TYPES } from "../constants/constants";
 
 const getGunById = (data) => {
   return { type: GUN_ACTION_TYPES.GET_BY_ID, payload: data };

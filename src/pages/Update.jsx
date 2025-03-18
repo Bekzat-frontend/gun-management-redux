@@ -1,9 +1,10 @@
-import { Wrapper } from "../components/Wrapper";
+import { Wrapper } from "../components/UI/Wrapper";
+
 import { useNavigate, useParams } from "react-router";
 import { Form } from "../components/UI/Form";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGunByIdThunk, updateGunThunk } from "../store/gunActions";
+import { getGunByIdThunk, updateGunThunk } from "../store/gunAction";
 
 export const Update = () => {
   const navigate = useNavigate();

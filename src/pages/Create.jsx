@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Form } from "../components/UI/Form";
-import { Wrapper } from "../components/Wrapper";
+import { Form } from "react-router";
+import { Wrapper } from "../components/UI/Wrapper";
 import { useNavigate } from "react-router";
-import { createGunThunk, getGunsThunk } from "../store/gunActions";
+import { createGunThunk, getGunsThunk } from "../store/gunAction";
 import Spinner from "../components/UI/Spinner";
 
 export const Create = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isLoading, error } = useSelector((state) => state);
+  const { isLoading, error } = useSelector((state) => state.gun);
+
   function goBack() {
     navigate("/main");
   }
@@ -16,7 +17,7 @@ export const Create = () => {
   async function createGun(params) {
     dispatch(createGunThunk(params));
     goBack();
-    dispatch(getGunsThunk())
+    dispatch(getGunsThunk());
   }
 
   return (
@@ -24,7 +25,7 @@ export const Create = () => {
       <h1>Create</h1>
       {isLoading && <Spinner />}
       {error && <p>Error</p>}
-      <Form buttonText="save" onCancel={goBack} submitForm={createGun} />
+      <Form buttonText="Save" onCancel={goBack} submitForm={createGun} />
     </Wrapper>
   );
 };

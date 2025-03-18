@@ -1,15 +1,17 @@
 import { useEffect } from "react";
-import { Wrapper } from "../components/Wrapper";
+import { Wrapper } from "../components/UI/Wrapper";
 import { useDispatch, useSelector } from "react-redux";
-import { getGunsThunk } from "../store/gunActions";
-import SingleGun from "../components/SingleGun";
-import { Button } from "../components/UI/Button";
+import { getGunsThunk } from "../store/gunAction";
+import SingleGun from "../components/UI/SingleGun";
+import { Button } from "../components/Button";
 import { useNavigate } from "react-router";
 
 export const Main = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { guns } = useSelector((state) => state);
+  const { guns } = useSelector((state) => {
+    return state;
+  });
   const onEditGun = (id) => {
     navigate(`update/${id}`);
   };

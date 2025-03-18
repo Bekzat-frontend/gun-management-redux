@@ -1,6 +1,7 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware } from "redux";
+import { createStore } from "redux";
 import { thunk } from "redux-thunk";
-import { GUN_ACTION_TYPES } from "../constants";
+import { GUN_ACTION_TYPES } from "../constants/constants";
 
 const initialState = {
   isLoading: false,

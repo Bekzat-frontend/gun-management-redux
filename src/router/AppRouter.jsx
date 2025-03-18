@@ -2,7 +2,6 @@ import { Navigate, Route, Routes } from "react-router";
 import { Main } from "../pages/Main";
 import { Create } from "../pages/Create";
 import { Update } from "../pages/Update";
-
 export const AppRouter = () => {
   return (
     <Routes>
